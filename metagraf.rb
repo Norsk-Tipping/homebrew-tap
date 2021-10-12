@@ -5,20 +5,20 @@
 class Metagraf < Formula
   desc ""
   homepage ""
-  version "0.1.5-rc9"
+  version "0.1.5-rc10"
   bottle :unneeded
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/Norsk-Tipping/metagraf/releases/download/v0.1.5-rc9/mg-0.1.5-rc9-darwin-amd64.tar.gz"
-      sha256 "27a978a7e4afaf206cbe8c7d8abf7049cd9d87b3618efd482cb2e66ac10d487a"
+      url "https://github.com/Norsk-Tipping/metagraf/releases/download/v0.1.5-rc10/mg-0.1.5-rc10-darwin-amd64.tar.gz"
+      sha256 "fb779f706953ec88f655a1a76a6634a216ad666b1f10b2e53c73b12151f7caa8"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/Norsk-Tipping/metagraf/releases/download/v0.1.5-rc9/mg-0.1.5-rc9-linux-amd64.tar.gz"
-      sha256 "3706192dafda99990f77ac0a5c08bb24cc66d2140c8128c5b4d9cc2b41a628f3"
+      url "https://github.com/Norsk-Tipping/metagraf/releases/download/v0.1.5-rc10/mg-0.1.5-rc10-linux-amd64.tar.gz"
+      sha256 "a8defc1fe14e98d723c04a87f235962bcef9ee56cc8f35a10b099b3797e81947"
     end
   end
 
