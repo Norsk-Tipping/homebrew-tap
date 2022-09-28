@@ -5,20 +5,20 @@
 class GhaCli < Formula
   desc ""
   homepage ""
-  version "1.0.2"
+  version "1.0.4"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/Norsk-Tipping/gha-cli/releases/download/v1.0.2/gha-cli-1.0.2-darwin-arm64.tar.gz"
-      sha256 "2a213cce1d321741ec905fe8d2132de2d04f39b74db664105aef7830b51798dc"
+    if Hardware::CPU.intel?
+      url "https://github.com/Norsk-Tipping/gha-cli/releases/download/v1.0.4/gha-cli-1.0.4-darwin-amd64.tar.gz"
+      sha256 "e33e6a490fb8bbd11f57f08f8f4ed8e85ec94b0f22132ef7ded8af5c3bdc50a4"
 
       def install
         bin.install "gha-cli"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/Norsk-Tipping/gha-cli/releases/download/v1.0.2/gha-cli-1.0.2-darwin-amd64.tar.gz"
-      sha256 "f9bb05915e55ff54150829146fbdbf7115ea7ddc2961835da8ff6b12f5fabb8c"
+    if Hardware::CPU.arm?
+      url "https://github.com/Norsk-Tipping/gha-cli/releases/download/v1.0.4/gha-cli-1.0.4-darwin-arm64.tar.gz"
+      sha256 "1860cf4565fcf0549d172738920c4185c7ff51fa98669d199ce4355596037525"
 
       def install
         bin.install "gha-cli"
@@ -27,17 +27,17 @@ class GhaCli < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/Norsk-Tipping/gha-cli/releases/download/v1.0.2/gha-cli-1.0.2-linux-amd64.tar.gz"
-      sha256 "890c4dd4b9af86c309fd892e3e388e64f326959322b7bc00e45bbb4651a46c87"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/Norsk-Tipping/gha-cli/releases/download/v1.0.4/gha-cli-1.0.4-linux-arm64.tar.gz"
+      sha256 "c7dbcc403ba8dd17ffd27727b50cce730966d6ebffda4cbe4a7b9e23d2824450"
 
       def install
         bin.install "gha-cli"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/Norsk-Tipping/gha-cli/releases/download/v1.0.2/gha-cli-1.0.2-linux-arm64.tar.gz"
-      sha256 "ae65304b47fc54fea1410b8f5ca90a4f13465e574d81b2938e4c162bb87d0b3a"
+    if Hardware::CPU.intel?
+      url "https://github.com/Norsk-Tipping/gha-cli/releases/download/v1.0.4/gha-cli-1.0.4-linux-amd64.tar.gz"
+      sha256 "f2bca472aa657697ac6a19df884dffb0c66e79a1157b4531a5376d916a7d2934"
 
       def install
         bin.install "gha-cli"
