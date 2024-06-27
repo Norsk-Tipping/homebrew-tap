@@ -5,17 +5,17 @@
 class Metagraf < Formula
   desc ""
   homepage ""
-  version "0.1.17"
+  version "0.1.19"
 
   on_macos do
-    url "https://github.com/Norsk-Tipping/metagraf/releases/download/v0.1.17/mg-0.1.17-darwin-amd64.tar.gz"
-    sha256 "30c79c2d04052e3e356440f8023fd695e51a3a349ac109ebce7905c7ee2cdeb5"
+    url "https://github.com/Norsk-Tipping/metagraf/releases/download/v0.1.19/mg-0.1.19-darwin-amd64.tar.gz"
+    sha256 "4de8a74d9c251033f790f30fe8023e12c81c2fa12907a31631a535be4485f922"
 
     def install
       bin.install "mg"
     end
 
-    if Hardware::CPU.arm?
+    on_arm do
       def caveats
         <<~EOS
           The darwin_arm64 architecture is not supported for the Metagraf
@@ -27,12 +27,14 @@ class Metagraf < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/Norsk-Tipping/metagraf/releases/download/v0.1.17/mg-0.1.17-linux-amd64.tar.gz"
-      sha256 "2d15581d401f8afcd95f69c6369844963dfcdaaf55249dbbb6f39ec3dc1b8b21"
+    on_intel do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/Norsk-Tipping/metagraf/releases/download/v0.1.19/mg-0.1.19-linux-amd64.tar.gz"
+        sha256 "02a3b97833cb7d5386355dcbb49c4fe45548dea97468abfe8c14868a1a5376d0"
 
-      def install
-        bin.install "mg"
+        def install
+          bin.install "mg"
+        end
       end
     end
   end
