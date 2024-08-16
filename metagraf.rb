@@ -5,11 +5,11 @@
 class Metagraf < Formula
   desc ""
   homepage ""
-  version "0.1.20"
+  version "0.1.22"
 
   on_macos do
-    url "https://github.com/Norsk-Tipping/metagraf/releases/download/v0.1.20/mg-0.1.20-darwin-amd64.tar.gz"
-    sha256 "9a75a006753f666fb5e57126fa17693c453d0dcdcf7f108656949679b46bda58"
+    url "https://github.com/Norsk-Tipping/metagraf/releases/download/v0.1.22/mg-0.1.22-darwin-amd64.tar.gz"
+    sha256 "3199edb4d77fb67cc5bc83568c8b0cf574805011d87b8244c0ae47aaece5950c"
 
     def install
       bin.install "mg"
@@ -29,8 +29,8 @@ class Metagraf < Formula
   on_linux do
     on_intel do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/Norsk-Tipping/metagraf/releases/download/v0.1.20/mg-0.1.20-linux-amd64.tar.gz"
-        sha256 "33db2ac1929f95115ca91684dd8162023114ce945ffb60eef070c3fafc61af4e"
+        url "https://github.com/Norsk-Tipping/metagraf/releases/download/v0.1.22/mg-0.1.22-linux-amd64.tar.gz"
+        sha256 "6d8a1f1631856e5369887eb5caeb372cb8ad8fa004e6e5e9f37d913e6c4c5b66"
 
         def install
           bin.install "mg"
