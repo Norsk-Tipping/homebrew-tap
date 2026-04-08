@@ -5,39 +5,39 @@
 class Metagraf < Formula
   desc ""
   homepage ""
-  version "0.1.26"
+  version "0.1.27"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/Norsk-Tipping/metagraf/releases/download/v0.1.26/mg-0.1.26-darwin-amd64.tar.gz"
-      sha256 "aeb39999ba0629864fdf5a482f62c5e8554c10287d5b70fe593fda2af0c0f812"
+      url "https://github.com/Norsk-Tipping/metagraf/releases/download/v0.1.27/mg-0.1.27-darwin-amd64.tar.gz"
+      sha256 "10e4194d5ff7017a7cfd566058919a8f532475c27abcd32fc8c7062b112d2938"
 
-      def install
+      define_method(:install) do
         bin.install "mg"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/Norsk-Tipping/metagraf/releases/download/v0.1.26/mg-0.1.26-darwin-arm64.tar.gz"
-      sha256 "86150eefd878357e73ad38f215a9f7ae3b3c1d7c3cc6b42b991ff08c96dfbd24"
+      url "https://github.com/Norsk-Tipping/metagraf/releases/download/v0.1.27/mg-0.1.27-darwin-arm64.tar.gz"
+      sha256 "e5a5128f24b6f444239706f1a536732b7a072e804ab504471d9a1647f4f9f13f"
 
-      def install
+      define_method(:install) do
         bin.install "mg"
       end
     end
   end
 
   on_linux do
-    if Hardware::CPU.intel? and Hardware::CPU.is_64_bit?
-      url "https://github.com/Norsk-Tipping/metagraf/releases/download/v0.1.26/mg-0.1.26-linux-amd64.tar.gz"
-      sha256 "2f5518cddaf31583b1b13ba3583c43aa8c7697d6bdbeb2bfc29ac3cad0a836e5"
-      def install
+    if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
+      url "https://github.com/Norsk-Tipping/metagraf/releases/download/v0.1.27/mg-0.1.27-linux-amd64.tar.gz"
+      sha256 "cc5e1586343b18966ac62eec108c37f8f82dd5db64867df249a0cfa99039cc9c"
+      define_method(:install) do
         bin.install "mg"
       end
     end
-    if Hardware::CPU.arm? and Hardware::CPU.is_64_bit?
-      url "https://github.com/Norsk-Tipping/metagraf/releases/download/v0.1.26/mg-0.1.26-linux-arm64.tar.gz"
-      sha256 "3fbce9dd7c05a8d3f331809cbc1cfa35afe18db1fe6932251988dcbc73ddcfea"
-      def install
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/Norsk-Tipping/metagraf/releases/download/v0.1.27/mg-0.1.27-linux-arm64.tar.gz"
+      sha256 "c92582e9f5cddd37c8ef6cc1e7af13e1a5096664d1bda539a516f8c934611aa0"
+      define_method(:install) do
         bin.install "mg"
       end
     end
