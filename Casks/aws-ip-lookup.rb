@@ -26,7 +26,7 @@ cask "aws-ip-lookup" do
     end
   end
 
-  version "0.1.7"
+  version "0.1.8"
 
   on_macos do
     on_intel do
@@ -36,7 +36,7 @@ cask "aws-ip-lookup" do
           "Authorization: Bearer #{GitHubHelper.token}",
           "X-GitHub-Api-Version: 2022-11-28",
         ]
-      sha256 "d1a9187d34c0fb27a2a368e2d801f6cee8a161b074443101df40644a1ce20a0a"
+      sha256 "2217c0124f591223ce7c55d687e4b79b045abfa7b00167f5b49e06a1d56e1691"
     end
     on_arm do
       url "#{GitHubHelper.release_asset_url("v#{version}", "aws-ip-lookup_#{version}_darwin_arm64.tar.gz")}",
@@ -45,7 +45,7 @@ cask "aws-ip-lookup" do
           "Authorization: Bearer #{GitHubHelper.token}",
           "X-GitHub-Api-Version: 2022-11-28",
         ]
-      sha256 "71b008e1ace8a40a20211431bf0a027d57d46dc498d73b71f00f39c2c2834647"
+      sha256 "eba839e3cab046895d4d37df2b7bb66245af30fac122c05508417532e3487925"
     end
   end
 
@@ -57,7 +57,7 @@ cask "aws-ip-lookup" do
           "Authorization: Bearer #{GitHubHelper.token}",
           "X-GitHub-Api-Version: 2022-11-28",
         ]
-      sha256 "c7280083f615efb3ba6cb70931e9d4747697c0e27516758541480761b971e32b"
+      sha256 "4e0f4983db98d1254711a309cb9ddeea9acb04414cecef052b934db84b77590f"
     end
     on_arm do
       url "#{GitHubHelper.release_asset_url("v#{version}", "aws-ip-lookup_#{version}_linux_arm64.tar.gz")}",
@@ -66,7 +66,7 @@ cask "aws-ip-lookup" do
           "Authorization: Bearer #{GitHubHelper.token}",
           "X-GitHub-Api-Version: 2022-11-28",
         ]
-      sha256 "48022f6c6d86a9e99c19751ab30cd02252e150cadd616a003ea3e8709230c8b6"
+      sha256 "2e9d01008b6b52444d90318367f1c0c71f4999948500f7011afab258daa41ac6"
     end
   end
 
