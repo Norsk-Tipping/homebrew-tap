@@ -1,4 +1,4 @@
-class CheckCertificateSwitchInCloudfront < Formula
+class CheckCertificateSwitchInCloudFront < Formula
   desc "Hovedspørsmål:"
   homepage "https://github.com/Norsk-Tipping/los-common-utilities"
   version "0.1.2"
