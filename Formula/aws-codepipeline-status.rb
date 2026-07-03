@@ -1,7 +1,7 @@
 class AwsCodepipelineStatus < Formula
   desc "Vis status for alle AWS CodePipelines i kontoen din, med fargekodet output, filtrering og watch-modus."
   homepage "https://github.com/Norsk-Tipping/los-common-utilities"
-  version "0.1.2"
+  version "0.1.3"
 
   module GitHubHelper
     def self.token
@@ -29,13 +29,13 @@ class AwsCodepipelineStatus < Formula
     end
   end
 
-  url "#{GitHubHelper.release_asset_url("aws-codepipeline-status/v0.1.2", "aws-codepipeline-status-0.1.2.tar.gz")}",
+  url "#{GitHubHelper.release_asset_url("aws-codepipeline-status/v0.1.3", "aws-codepipeline-status-0.1.3.tar.gz")}",
     headers: [
       "Accept: application/octet-stream",
       "Authorization: Bearer #{GitHubHelper.token}",
       "X-GitHub-Api-Version: 2022-11-28"
     ]
-  sha256 "8c86983e5373694cc8cb04312f16265734baf4f02bf1e999d34cd9192c934b38"
+  sha256 "4e1125b975436f2e4459a25d5116c6898ee955ccfd40105d93ab8d0e99c2ed32"
 
   def install
     bin.install "aws-codepipeline-status" => "aws-codepipeline-status"
