@@ -1,7 +1,7 @@
 class CheckCertificateSwitchInCloudFront < Formula
   desc "Hovedspørsmål:"
   homepage "https://github.com/Norsk-Tipping/los-common-utilities"
-  version "0.1.2"
+  version "0.1.3"
 
   module GitHubHelper
     def self.token
@@ -29,13 +29,13 @@ class CheckCertificateSwitchInCloudFront < Formula
     end
   end
 
-  url "#{GitHubHelper.release_asset_url("checkCertificateSwitchInCloudFront/v0.1.2", "checkCertificateSwitchInCloudFront-0.1.2.tar.gz")}",
+  url "#{GitHubHelper.release_asset_url("checkCertificateSwitchInCloudFront/v0.1.3", "checkCertificateSwitchInCloudFront-0.1.3.tar.gz")}",
     headers: [
       "Accept: application/octet-stream",
       "Authorization: Bearer #{GitHubHelper.token}",
       "X-GitHub-Api-Version: 2022-11-28"
     ]
-  sha256 "c0a2b8766b821abeec491991aef732ceebce9758835a946817de172cb44cfdf4"
+  sha256 "180949fa91418517a75d55d0cd51dbe2fa98abdefe92799f44236070aaaeaced"
 
   def install
     bin.install "checkCertificateSwitch.sh" => "checkCertificateSwitchInCloudFront"
