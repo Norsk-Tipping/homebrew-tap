@@ -1,7 +1,7 @@
 class TraverseMemberAccounts < Formula
   desc "Dette skriptet kjører samme kommando som FORHØYET ADMINISTRATOR i alle kontoer i landingssonen."
   homepage "https://github.com/Norsk-Tipping/los-common-utilities"
-  version "0.1.2"
+  version "0.1.3"
 
   module GitHubHelper
     def self.token
@@ -29,13 +29,13 @@ class TraverseMemberAccounts < Formula
     end
   end
 
-  url "#{GitHubHelper.release_asset_url("traverseMemberAccounts/v0.1.2", "traverseMemberAccounts-0.1.2.tar.gz")}",
+  url "#{GitHubHelper.release_asset_url("traverseMemberAccounts/v0.1.3", "traverseMemberAccounts-0.1.3.tar.gz")}",
     headers: [
       "Accept: application/octet-stream",
       "Authorization: Bearer #{GitHubHelper.token}",
       "X-GitHub-Api-Version: 2022-11-28"
     ]
-  sha256 "8d83e2d3469792eabd65b15a89cda06d27912e55ee584a2cc36f3523cb9c3241"
+  sha256 "1059af2449633e4079b255956a1e5e4c0cc20ce7a5ba14023a00349f304435ed"
 
   def install
     bin.install "templateTraverseAccounts.sh" => "traverseMemberAccounts"
