@@ -1,7 +1,7 @@
 class LosRepoCoverageCheck < Formula
   desc "Skanner alle GitHub-repoer i Norsk-Tipping-organisasjonen som eies av **Team LOS**"
   homepage "https://github.com/Norsk-Tipping/los-common-utilities"
-  version "0.1.0"
+  version "0.1.1"
 
   module GitHubHelper
     def self.token
@@ -29,13 +29,13 @@ class LosRepoCoverageCheck < Formula
     end
   end
 
-  url "#{GitHubHelper.release_asset_url("los-repo-coverage-check/v0.1.0", "los-repo-coverage-check-0.1.0.tar.gz")}",
+  url "#{GitHubHelper.release_asset_url("los-repo-coverage-check/v0.1.1", "los-repo-coverage-check-0.1.1.tar.gz")}",
     headers: [
       "Accept: application/octet-stream",
       "Authorization: Bearer #{GitHubHelper.token}",
       "X-GitHub-Api-Version: 2022-11-28"
     ]
-  sha256 "f621fd371f32fba10ef1539deb76f32414afc5d3ef3f22a2e7a1924391811277"
+  sha256 "5f7feacc463bf2c1813bdad4b5c8af8b66687352e6a8bd48420b8c3c2906e925"
 
   def install
     bin.install "los-repo-coverage-check.sh" => "los-repo-coverage-check"
