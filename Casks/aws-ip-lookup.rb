@@ -26,47 +26,55 @@ cask "aws-ip-lookup" do
     end
   end
 
-  version "0.1.9"
+  # Remove the quarantine attribute on macOS for the unsigned binary.
+  # Uses the modern `postflight_steps` stanza instead of the deprecated
+  # `postflight` block (GoReleaser's `hooks.post.install` renders `postflight`).
+  postflight_steps do
+    if OS.mac?
+      system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{staged_path}/aws-ip-lookup"]
+    end
+  end
+
+  version "0.1.10"
 
   on_macos do
-    on_intel do
-      url "#{GitHubHelper.release_asset_url("v#{version}", "aws-ip-lookup_#{version}_darwin_amd64.tar.gz")}",
-        header: [
-          "Accept: application/octet-stream",
-          "Authorization: Bearer #{GitHubHelper.token}",
-          "X-GitHub-Api-Version: 2022-11-28",
-        ]
-      sha256 "4f8f70e645e811b6ecd4ea5c0e3dcf289ce876e06c87db531304c5a199e47a95"
-    end
     on_arm do
+      sha256 "5c4e1a3c9e32e28a214c8248ca1044535ef12965f8fbb75522a0077afb74a0aa"
       url "#{GitHubHelper.release_asset_url("v#{version}", "aws-ip-lookup_#{version}_darwin_arm64.tar.gz")}",
         header: [
           "Accept: application/octet-stream",
           "Authorization: Bearer #{GitHubHelper.token}",
           "X-GitHub-Api-Version: 2022-11-28",
         ]
-      sha256 "61c126b8f617a0d6ff89cd952ff83531d26049c41a793593959e5e05b89be62f"
     end
-  end
-
-  on_linux do
     on_intel do
-      url "#{GitHubHelper.release_asset_url("v#{version}", "aws-ip-lookup_#{version}_linux_amd64.tar.gz")}",
+      sha256 "450f44918ac01d5046e884611f4e48fed6479685e8e785a8ad1ab933d7fec2a8"
+      url "#{GitHubHelper.release_asset_url("v#{version}", "aws-ip-lookup_#{version}_darwin_amd64.tar.gz")}",
         header: [
           "Accept: application/octet-stream",
           "Authorization: Bearer #{GitHubHelper.token}",
           "X-GitHub-Api-Version: 2022-11-28",
         ]
-      sha256 "8ec1c946a0b6377bad2ad174825be196db17923d3f63802acdbca3c7840d3c3a"
     end
+  end
+  on_linux do
     on_arm do
+      sha256 "0d6144943a35f98a43614b828aed391b70859f167af077c8352d5c654853b955"
       url "#{GitHubHelper.release_asset_url("v#{version}", "aws-ip-lookup_#{version}_linux_arm64.tar.gz")}",
         header: [
           "Accept: application/octet-stream",
           "Authorization: Bearer #{GitHubHelper.token}",
           "X-GitHub-Api-Version: 2022-11-28",
         ]
-      sha256 "859e1cfd60b105e68386d43a59191dfeda3b645e2fe5034ca3efbdbff934715c"
+    end
+    on_intel do
+      sha256 "20c6b028a0aff03e9331aa6a2743f6750e6f6ae7107b0d999e36b97054dd6acc"
+      url "#{GitHubHelper.release_asset_url("v#{version}", "aws-ip-lookup_#{version}_linux_amd64.tar.gz")}",
+        header: [
+          "Accept: application/octet-stream",
+          "Authorization: Bearer #{GitHubHelper.token}",
+          "X-GitHub-Api-Version: 2022-11-28",
+        ]
     end
   end
 
@@ -80,12 +88,5 @@ cask "aws-ip-lookup" do
 
   binary "aws-ip-lookup"
 
-  postflight do
-    if OS.mac?
-      system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{staged_path}/aws-ip-lookup"]
-    end
-  end
-
   # No zap stanza required
-
 end
