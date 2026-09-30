@@ -5,20 +5,20 @@
 class Metagraf < Formula
   desc ""
   homepage ""
-  version "0.1.28"
+  version "0.1.29"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/Norsk-Tipping/metagraf/releases/download/v0.1.28/mg-0.1.28-darwin-amd64.tar.gz"
-      sha256 "a8acfeba4079c5d8cae713096caf042a1b2e69230fa8526ef9356a804fbc72a8"
+      url "https://github.com/Norsk-Tipping/metagraf/releases/download/v0.1.29/mg-0.1.29-darwin-amd64.tar.gz"
+      sha256 "f976dc5635d591d8405a39453cf14e4d2a26368b97143dfb74145bd55a39aed5"
 
       define_method(:install) do
         bin.install "mg"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/Norsk-Tipping/metagraf/releases/download/v0.1.28/mg-0.1.28-darwin-arm64.tar.gz"
-      sha256 "5d78b56e85c44df81b44c57ea7c868555195bbf5ad144c917abe587885a22400"
+      url "https://github.com/Norsk-Tipping/metagraf/releases/download/v0.1.29/mg-0.1.29-darwin-arm64.tar.gz"
+      sha256 "0204deae397dbf7dc74d20a9af508539b6aecfb9037036291f1616f6fad29b19"
 
       define_method(:install) do
         bin.install "mg"
@@ -28,15 +28,15 @@ class Metagraf < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/Norsk-Tipping/metagraf/releases/download/v0.1.28/mg-0.1.28-linux-amd64.tar.gz"
-      sha256 "e6ef8655ee898e1a3e2c8c9731830ba2dab33c583e00ca0cde925339c82835a7"
+      url "https://github.com/Norsk-Tipping/metagraf/releases/download/v0.1.29/mg-0.1.29-linux-amd64.tar.gz"
+      sha256 "bad1af4be43093757b087737b38cdc6c14b4b03399bdc332b717973f620db4db"
       define_method(:install) do
         bin.install "mg"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/Norsk-Tipping/metagraf/releases/download/v0.1.28/mg-0.1.28-linux-arm64.tar.gz"
-      sha256 "179e40f3ad373e724dcf17f45a7ac43725851db4022f79978da563041561020a"
+      url "https://github.com/Norsk-Tipping/metagraf/releases/download/v0.1.29/mg-0.1.29-linux-arm64.tar.gz"
+      sha256 "b1f14e629511cd9920077fe572ca70a8644050f816cbe2a3f5db02de2361128b"
       define_method(:install) do
         bin.install "mg"
       end
