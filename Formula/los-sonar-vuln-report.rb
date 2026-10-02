@@ -1,7 +1,7 @@
 class LosSonarVulnReport < Formula
   desc "Lager en prioritert rapport over åpne **SonarCloud-sårbarheter** (og uvurderte security hotspots) for Team LOS sine prosjekter: alle Sonar-prosjekter med taggene `devex`, `o11y` eller `landingzone`, gruppert på team via taggen."
   homepage "https://github.com/Norsk-Tipping/los-common-utilities"
-  version "0.1.2"
+  version "0.1.3"
 
   module GitHubHelper
     def self.token
@@ -29,13 +29,13 @@ class LosSonarVulnReport < Formula
     end
   end
 
-  url "#{GitHubHelper.release_asset_url("los-sonar-vuln-report/v0.1.2", "los-sonar-vuln-report-0.1.2.tar.gz")}",
+  url "#{GitHubHelper.release_asset_url("los-sonar-vuln-report/v0.1.3", "los-sonar-vuln-report-0.1.3.tar.gz")}",
     headers: [
       "Accept: application/octet-stream",
       "Authorization: Bearer #{GitHubHelper.token}",
       "X-GitHub-Api-Version: 2022-11-28"
     ]
-  sha256 "bf4d8b99b7392fa35b90bd895a9533ff4f9cadf57f03e0920f142634bae3b146"
+  sha256 "4d4b25c7e2982cda6519965813d4560c18eb3daed96bb9e53504ebb0c6f69725"
 
   def install
     bin.install "" => "los-sonar-vuln-report"
