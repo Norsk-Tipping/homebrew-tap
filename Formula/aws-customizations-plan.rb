@@ -1,7 +1,7 @@
 class AwsCustomizationsPlan < Formula
   desc "Kjør `terraform plan` lokalt mot AFT-tilpasninger (account customizations og global customizations) uten å pushe kode gjennom hele CI/CD-pipelinen."
   homepage "https://github.com/Norsk-Tipping/los-common-utilities"
-  version "0.1.3"
+  version "0.1.4"
 
   module GitHubHelper
     def self.token
@@ -29,13 +29,13 @@ class AwsCustomizationsPlan < Formula
     end
   end
 
-  url "#{GitHubHelper.release_asset_url("aws-customizations-plan/v0.1.3", "aws-customizations-plan-0.1.3.tar.gz")}",
+  url "#{GitHubHelper.release_asset_url("aws-customizations-plan/v0.1.4", "aws-customizations-plan-0.1.4.tar.gz")}",
     headers: [
       "Accept: application/octet-stream",
       "Authorization: Bearer #{GitHubHelper.token}",
       "X-GitHub-Api-Version: 2022-11-28"
     ]
-  sha256 "3e38f7e3fd41cd2460365b5f087f782d7535e53982a1ab7daf0151ce5d2924c3"
+  sha256 "e0bc8291b09a47210d9da17685ff3dd3828cbaf66f96147498df5667d5e7f771"
 
   def install
     bin.install "" => "aws-customizations-plan"
