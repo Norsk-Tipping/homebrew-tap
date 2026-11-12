@@ -1,16 +1,16 @@
 class Mectl < Formula
   desc "MiddlEarth command-line client"
   homepage "https://github.com/janfonas/mectl-releases"
-  version "0.12.0"
+  version "0.13.0"
 
   on_macos do
     on_arm do
-      url "https://github.com/janfonas/mectl-releases/releases/download/v0.12.0/mectl_0.12.0_darwin_arm64.tar.gz"
-      sha256 "fea3a15b38b3f18c48a8cf294fe26b76c85e947856d654232461912dd7aa80f3"
+      url "https://github.com/janfonas/mectl-releases/releases/download/v0.13.0/mectl_0.13.0_darwin_arm64.tar.gz"
+      sha256 "fc0a50f6762a55d31e4adbd9bfc897ed17badb9dade10ee8ac2d5f7dbc6e40d0"
     end
     on_intel do
-      url "https://github.com/janfonas/mectl-releases/releases/download/v0.12.0/mectl_0.12.0_darwin_amd64.tar.gz"
-      sha256 "fd485506592c19835d90194910e0d5b4a6ab0b9ddedd3baf6f4324f0806716d0"
+      url "https://github.com/janfonas/mectl-releases/releases/download/v0.13.0/mectl_0.13.0_darwin_amd64.tar.gz"
+      sha256 "718e7477be9183e0e2003ee26025465e5d13f5d13dc9d148fbe61c675a46a7ba"
     end
   end
 
@@ -18,8 +18,8 @@ class Mectl < Formula
     depends_on arch: :x86_64
 
     on_intel do
-      url "https://github.com/janfonas/mectl-releases/releases/download/v0.12.0/mectl_0.12.0_linux_amd64.tar.gz"
-      sha256 "8ea76496cef82a6b52e761132d198d3104bd95e096d214423516e973379908c8"
+      url "https://github.com/janfonas/mectl-releases/releases/download/v0.13.0/mectl_0.13.0_linux_amd64.tar.gz"
+      sha256 "9d027e00ece5b2d09d89342173af7dacce77bc5f6ab259a0641c0980a5692940"
     end
   end
 
